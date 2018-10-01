@@ -41,7 +41,7 @@ public class MainActivityGM extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_gm);
+        setContentView(R.layout.toolbar_gm);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarr_gm);
         setSupportActionBar(toolbar);
 

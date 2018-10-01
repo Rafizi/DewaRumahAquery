@@ -42,7 +42,7 @@ public class MainActivitySConsultan extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_sconsultan);
+        setContentView(R.layout.toolbar_sc);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarr_sc);
         setSupportActionBar(toolbar);
 
