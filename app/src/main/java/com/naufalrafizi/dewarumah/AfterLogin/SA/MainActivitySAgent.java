@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.support.v7.widget.Toolbar;
 
 import com.naufalrafizi.dewarumah.AfterLogin.SA.BonusSA.Activity.BonusActivitySA;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.NotifSA.Activity.NotifSA;
@@ -46,6 +47,8 @@ public class MainActivitySAgent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.toolbar_sa);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarr);
+        setSupportActionBar(toolbar);
 
         inisialisasi();
 

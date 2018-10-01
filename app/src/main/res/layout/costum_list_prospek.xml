@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/color_cv"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="@dimen/activity_horizontal_margin">
 
@@ -12,20 +11,19 @@
         android:id="@+id/cvProspekSA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:cardBackgroundColor="@color/color_cv">
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="5dp"
-                android:layout_gravity="center">
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/txtNama"
@@ -35,19 +33,26 @@
                     android:textColor="@color/color_tv" />
 
                 <TextView
+                    android:id="@+id/txtNoTelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Telp"
+                    android:textColor="@color/color_tv" />
+
+                <TextView
                     android:id="@+id/txtEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Email"
                     android:textColor="@color/color_tv" />
 
-
                 <TextView
-                    android:id="@+id/txtNoTelp"
+                    android:id="@+id/txtSA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No Telp"
-                    android:textColor="@color/color_tv" />
+                    android:text="SA"
+                    android:textColor="@color/color_tv"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/txtProject"

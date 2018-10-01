@@ -38,8 +38,10 @@
         <activity
             android:name=".AfterLogin.SA.MainActivitySAgent"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name=".AfterLogin.SC.MainActivitySConsultan" />
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".AfterLogin.SC.MainActivitySConsultan"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".AfterLogin.GM.MainActivityGM" />
         <activity android:name=".AfterLogin.SA.TokoSA.Activity.TokoActivitySA" />
         <activity
