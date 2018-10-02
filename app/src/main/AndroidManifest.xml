@@ -38,11 +38,14 @@
         <activity
             android:name=".AfterLogin.SA.MainActivitySAgent"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".AfterLogin.SC.MainActivitySConsultan"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".AfterLogin.GM.MainActivityGM" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".AfterLogin.SC.MainActivitySConsultan"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AfterLogin.GM.MainActivityGM"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AfterLogin.SA.TokoSA.Activity.TokoActivitySA" />
         <activity
             android:name=".AfterLogin.SA.ProspekSA.Activity.ProspekActivitySA"
@@ -61,7 +64,10 @@
         <activity android:name=".AfterLogin.SC.DetailPromoSC" />
         <activity android:name=".AfterLogin.GM.NotifGM.Activity.NotifGM" />
         <activity android:name=".AfterLogin.SA.NotifSA.Activity.NotifSA" />
-        <activity android:name=".AfterLogin.SC.NotifSC.Activity.NotifSC"></activity>
+        <activity android:name=".AfterLogin.SC.NotifSC.Activity.NotifSC" />
+        <activity android:name=".AfterLogin.GM.NotifGM.Activity.DetailNotifGM" />
+        <activity android:name=".AfterLogin.SA.NotifSA.Activity.DetailNotifSA" />
+        <activity android:name=".AfterLogin.SC.NotifSC.Activity.DetailNotifSC"></activity>
     </application>
 
 </manifest>

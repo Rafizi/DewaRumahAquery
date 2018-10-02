@@ -1,12 +1,15 @@
 package com.naufalrafizi.dewarumah.AfterLogin.SA.NotifSA.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.naufalrafizi.dewarumah.AfterLogin.SA.NotifSA.Activity.DetailNotifSA;
 import com.naufalrafizi.dewarumah.R;
 
 /**
@@ -40,8 +43,24 @@ public class RecyclerAdapterNotifSA extends RecyclerView.Adapter<RecyclerAdapter
     @Override
     public void onBindViewHolder(RecyclerAdapterNotifSA.ViewHolder holder, int position) {
 
-        holder.txtNama.setText(mNama[position]);
-        holder.txtContent.setText(mContent[position]);
+        final String nama,content;
+
+        nama = mNama[position];
+        content = mContent[position];
+
+        holder.txtNama.setText(nama);
+        holder.txtContent.setText(content);
+        holder.cvNotifSA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(c, DetailNotifSA.class);
+                i.putExtra("nama",nama);
+                i.putExtra("content",content);
+                c.startActivity(i);
+
+            }
+        });
     }
 
     @Override
@@ -51,9 +70,10 @@ public class RecyclerAdapterNotifSA extends RecyclerView.Adapter<RecyclerAdapter
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtNama,txtContent;
+        CardView cvNotifSA;
         public ViewHolder(View itemView) {
             super(itemView);
-
+            cvNotifSA = (CardView)itemView.findViewById(R.id.cvNotif);
             txtNama = (TextView)itemView.findViewById(R.id.txtNamaAgentSC);
             txtContent = (TextView)itemView.findViewById(R.id.txtProjectAgentSC);
 
