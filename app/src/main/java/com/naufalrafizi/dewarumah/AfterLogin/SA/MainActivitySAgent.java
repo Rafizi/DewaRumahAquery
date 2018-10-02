@@ -47,6 +47,7 @@ public class MainActivitySAgent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.toolbar_sa);
+
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarr);
         setSupportActionBar(toolbar);
 

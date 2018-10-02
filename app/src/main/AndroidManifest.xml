@@ -42,7 +42,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".AfterLogin.SC.MainActivitySConsultan"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".AfterLogin.GM.MainActivityGM" />
+        <activity android:name=".AfterLogin.GM.MainActivityGM"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".AfterLogin.SA.TokoSA.Activity.TokoActivitySA" />
         <activity
             android:name=".AfterLogin.SA.ProspekSA.Activity.ProspekActivitySA"
