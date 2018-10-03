@@ -67,7 +67,8 @@
         <activity android:name=".AfterLogin.SC.NotifSC.Activity.NotifSC" />
         <activity android:name=".AfterLogin.GM.NotifGM.Activity.DetailNotifGM" />
         <activity android:name=".AfterLogin.SA.NotifSA.Activity.DetailNotifSA" />
-        <activity android:name=".AfterLogin.SC.NotifSC.Activity.DetailNotifSC"></activity>
+        <activity android:name=".AfterLogin.SC.NotifSC.Activity.DetailNotifSC" />
+        <activity android:name=".AfterLogin.SC.ProgressSC.Activity.ProgressSC"></activity>
     </application>
 
 </manifest>
