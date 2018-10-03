@@ -26,7 +26,7 @@ public class NotifSC extends AppCompatActivity {
             "Anda telah berhasil masuk",
             "Data anda akan segera di proses",
             "Mendapatkan 1000 point",
-            "Data anda akan segera di proses"
+            "Menambahkan prospek"
 
     };
 

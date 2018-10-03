@@ -25,6 +25,7 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
     DataHelper helper;
     List<MInputProspek> pList = new ArrayList<>();
     RecyclerViewAdapterProspekSA adapter;
+    String namaSA;
     MInputProspek p;
 
     @Override
@@ -58,6 +59,8 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
         edtSAInputProspek = (TextInputEditText) findViewById(R.id.edtSAInputProspek);
         edtNomorTelponInputProspek = (TextInputEditText) findViewById(R.id.edtNomorTelponInputProspek);
 
+        namaSA = getIntent().getStringExtra("nama");
+
     }
 
     @Override
@@ -71,10 +74,10 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
                 nama = edtNamaInputProspek.getText().toString();
                 email = edtEmailInputProspek.getText().toString();
                 nomor = edtNomorTelponInputProspek.getText().toString();
-                sa = edtSAInputProspek.getText().toString();
+                sa = namaSA;
                 project = edtProjectInputProspek.getText().toString();
 
-                if (nama.isEmpty() || email.isEmpty() || nomor.isEmpty()  || project.isEmpty()){
+                if (nama.isEmpty() || email.isEmpty() || nomor.isEmpty()  || project.isEmpty() || sa.isEmpty()){
                     Toast.makeText(this, "Masukin yang bener woi", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -82,7 +85,7 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
                             edtNamaInputProspek.getText().toString(),
                             edtEmailInputProspek.getText().toString(),
                             edtNomorTelponInputProspek.getText().toString(),
-                            edtSAInputProspek.getText().toString(),
+                            sa = namaSA,
                             edtProjectInputProspek.getText().toString()
                     );
 

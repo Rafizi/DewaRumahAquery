@@ -1,6 +1,7 @@
 package com.naufalrafizi.dewarumah.AfterLogin.GM.NotifGM.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.naufalrafizi.dewarumah.AfterLogin.GM.NotifGM.Activity.DetailNotifGM;
 import com.naufalrafizi.dewarumah.R;
 
 /**
@@ -42,9 +44,24 @@ public class RecyclerAdapterNotifGM extends RecyclerView.Adapter<RecyclerAdapter
     @Override
     public void onBindViewHolder(RecyclerAdapterNotifGM.ViewHolder holder, int position) {
 
-        holder.txtTier.setText(mTier[position]);
-        holder.txtNama.setText(mNama[position]);
-        holder.txtContent.setText(mContent[position]);
+        final String nama,tier,content;
+
+        nama = mNama[position];
+        tier = mTier[position];
+        content = mContent[position];
+
+        holder.txtTier.setText(tier);
+        holder.txtNama.setText(nama);
+        holder.txtContent.setText(content);
+        holder.cvDataGM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(c, DetailNotifGM.class);
+                i.putExtra("nama",nama);
+                i.putExtra("content",content);
+                c.startActivity(i);
+            }
+        });
 
     }
 

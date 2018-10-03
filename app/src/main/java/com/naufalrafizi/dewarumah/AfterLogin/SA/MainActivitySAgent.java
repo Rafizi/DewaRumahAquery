@@ -112,7 +112,9 @@ public class MainActivitySAgent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(),InputProspekSA.class));
+                Intent i = new Intent(getApplicationContext(),InputProspekSA.class);
+                i.putExtra("nama",nama);
+                startActivity(i);
 
             }
         });
