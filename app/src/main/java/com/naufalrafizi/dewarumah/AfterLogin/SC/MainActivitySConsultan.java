@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.ProspekSA.Activity.ProspekActivitySA;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.DataAgentSC.Activity.DataAgentSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.NotifSC.Activity.NotifSC;
+import com.naufalrafizi.dewarumah.AfterLogin.SC.ProgressSC.Activity.ProgressSC;
 import com.naufalrafizi.dewarumah.R;
 
 import me.relex.circleindicator.CircleIndicator;
@@ -80,6 +81,8 @@ public class MainActivitySConsultan extends AppCompatActivity {
         btnProgress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                startActivity(new Intent(getApplicationContext(), ProgressSC.class));
 
             }
         });
