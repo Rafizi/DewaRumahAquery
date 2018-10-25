@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ import java.util.List;
 public class RecyclerViewAdapterProspekSA extends RecyclerView.Adapter<RecyclerViewAdapterProspekSA.ViewHolder> {
 
     private List<MInputProspek> data;
+    private List<MInputProspek> mData;
     RecyclerViewAdapterProspekSA adapter;
     private Context context;
     private LayoutInflater inflater;
@@ -47,6 +49,8 @@ public class RecyclerViewAdapterProspekSA extends RecyclerView.Adapter<RecyclerV
         this.context = c.getApplicationContext();
         this.inflater = LayoutInflater.from(context);
         this.helper = new DataHelper(c);
+
+
 
     }
 
@@ -213,6 +217,11 @@ public class RecyclerViewAdapterProspekSA extends RecyclerView.Adapter<RecyclerV
 //            }
 //        });
 
+    }
+    public void setFilter(ArrayList<MInputProspek>newProspek){
+        data = new ArrayList<>();
+        data.addAll(newProspek);
+        notifyDataSetChanged();
     }
 
     private void dialogUpdate(MInputProspek p, final int position) {

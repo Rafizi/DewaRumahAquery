@@ -42,7 +42,7 @@ public class BonusActivitySA extends AppCompatActivity {
 
     }
 
-    private class ViewPagerAdapter extends FragmentPagerAdapter {
+    private class   ViewPagerAdapter extends FragmentPagerAdapter {
 
         private final List<Fragment> fragmentList = new ArrayList<>();
         private final List<String> nameList = new ArrayList<>();

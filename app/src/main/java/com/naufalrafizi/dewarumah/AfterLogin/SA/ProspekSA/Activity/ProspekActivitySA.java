@@ -1,5 +1,6 @@
 package com.naufalrafizi.dewarumah.AfterLogin.SA.ProspekSA.Activity;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,10 +9,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.mancj.materialsearchbar.SimpleOnSearchActionListener;
+import com.naufalrafizi.dewarumah.AfterLogin.SA.InputProspekSA.Helper.DBAdapter;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.InputProspekSA.Helper.DBDataSource;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.InputProspekSA.Helper.DataHelper;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.InputProspekSA.Model.MInputProspek;
@@ -33,7 +36,7 @@ public class ProspekActivitySA extends AppCompatActivity {
     List<String>sList = new ArrayList<>();
     MInputProspek p;
     TextView emptyTxt;
-    MaterialSearchBar sProspek;
+    android.support.v7.widget.SearchView svProspek;
 
     RecyclerViewAdapterProspekSA rvAdapterProspek;
     @Override
@@ -44,62 +47,22 @@ public class ProspekActivitySA extends AppCompatActivity {
         dbHelper = new DataHelper(this);
         p = new MInputProspek();
         emptyTxt = (TextView)findViewById(R.id.empty_notes_view);
-        sProspek = (MaterialSearchBar)findViewById(R.id.searchProspek);
-
-        sProspek.setHint("Search");
-        sProspek.setCardViewElevation(10);
+        svProspek = ( android.support.v7.widget.SearchView) findViewById(R.id.svProspek);
         loadsuggestlistsearch();
-        sProspek.addTextChangeListener(new TextWatcher() {
+        svProspek.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+            public boolean onQueryTextSubmit(String query) {
+                return false;
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                String search =null;
-                if (search != null && !search.isEmpty()){
-                    List<String>suggest = new ArrayList<>();
-                    for (String ssearch : sList)
-                    {
-                        if (search.toLowerCase().contains(sProspek.getText().toString()))
-                            suggest.add(ssearch);
-
-
-                    }
-                    RecyclerViewAdapterProspekSA adapter = new RecyclerViewAdapterProspekSA(getApplicationContext(),mList);
-                    rvProspek.setAdapter(adapter);
-                }
-                else {
-                    RecyclerViewAdapterProspekSA adapter = new RecyclerViewAdapterProspekSA(getApplicationContext(),mList);
-                    rvProspek.setAdapter(adapter);
-                }
-            }
-
-
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
+            public boolean onQueryTextChange(String newText) {
+                getPlanets(newText);
+                return false;
             }
         });
-        sProspek.setOnSearchActionListener(new SimpleOnSearchActionListener() {
-            @Override
-            public void onSearchStateChanged(boolean enabled) {
-                if (!enabled)
-                    rvProspek.setAdapter(rvAdapterProspek);
-            }
 
-            @Override
-            public void onSearchConfirmed(CharSequence text) {
-                startSearch(text.toString());
-            }
 
-            @Override
-            public void onButtonClicked(int buttonCode) {
-                super.onButtonClicked(buttonCode);
-            }
-        });
 
 
 
@@ -123,6 +86,32 @@ public class ProspekActivitySA extends AppCompatActivity {
 
 
 
+    }
+
+    private void getPlanets(String searchTerm)
+    {
+        mList.clear();
+
+        DBAdapter db=new DBAdapter(this);
+        db.openDB();
+        MInputProspek p=null;
+        Cursor c=db.retrieve(searchTerm);
+
+        while (c.moveToNext())
+        {
+            int id=c.getInt(0);
+            String name=c.getString(1);
+
+            p=new MInputProspek();
+            p.setId(id);
+            p.setNama_prospek(name);
+
+            mList.add(p);
+        }
+
+        db.closeDB();
+
+        rvProspek.setAdapter(rvAdapterProspek);
     }
 
     private void startSearch(String text) {

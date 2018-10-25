@@ -88,6 +88,7 @@ public class MainActivityGM extends AppCompatActivity {
         viewPagerGM.setAdapter(vpAdapterGM);
         indicatorGM.setViewPager(viewPagerGM);
 
+
     }
 
     private void inisialisasi() {
