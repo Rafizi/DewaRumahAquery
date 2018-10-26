@@ -52,12 +52,18 @@ public class ProspekActivitySA extends AppCompatActivity {
         svProspek.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                rvAdapterProspek = new RecyclerViewAdapterProspekSA(getApplicationContext(),mList);
+                rvProspek.setAdapter(rvAdapterProspek);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                getPlanets(newText);
+                if (newText ==null){
+                    rvProspek.setAdapter(rvAdapterProspek);
+                }else {
+                    getPlanets(newText);
+                }
                 return false;
             }
         });
@@ -101,10 +107,16 @@ public class ProspekActivitySA extends AppCompatActivity {
         {
             int id=c.getInt(0);
             String name=c.getString(1);
+            String telp = c.getString(5);
+            String email = c.getString(3);
+            String project = c.getString(2);
 
             p=new MInputProspek();
             p.setId(id);
             p.setNama_prospek(name);
+            p.setNotelp_prospek(telp);
+            p.setEmail_prospek(email);
+            p.setProject_prospek(project);
 
             mList.add(p);
         }
