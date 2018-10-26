@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.naufalrafizi.dewarumah.AfterLogin.GM.DataGM.Activity.DataGMActivity;
+import com.naufalrafizi.dewarumah.AfterLogin.GM.DataGM.Activity.DataGMSC;
 import com.naufalrafizi.dewarumah.AfterLogin.GM.NotifGM.Activity.NotifGM;
 import com.naufalrafizi.dewarumah.R;
 
@@ -65,7 +65,7 @@ public class MainActivityGM extends AppCompatActivity {
         btnDataGM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), DataGMActivity.class));
+                startActivity(new Intent(getApplicationContext(), DataGMSC.class));
             }
         });
 

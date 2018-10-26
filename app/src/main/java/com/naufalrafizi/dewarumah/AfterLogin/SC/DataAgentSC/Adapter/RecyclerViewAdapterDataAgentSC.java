@@ -18,11 +18,13 @@ public class RecyclerViewAdapterDataAgentSC extends RecyclerView.Adapter<Recycle
 
     private String [] mNamaAgent = new String[0];
     private String [] mProject = new String[0];
+    private String [] mNomorAgent = new String[0];
     private Context c;
     private LayoutInflater inflater;
 
-    public RecyclerViewAdapterDataAgentSC(Context c, String[] namaAgent, String[] projectAgent) {
+    public RecyclerViewAdapterDataAgentSC(Context c, String[] namaAgent, String[] projectAgent, String[] nomorAgent) {
 
+        this.mNomorAgent = nomorAgent;
         this.mNamaAgent = namaAgent;
         this.mProject = projectAgent;
         this.c = c.getApplicationContext();
@@ -45,9 +47,11 @@ public class RecyclerViewAdapterDataAgentSC extends RecyclerView.Adapter<Recycle
 
         final String nama = mNamaAgent[position];
         final String project = mProject[position];
+        final String nomor = mNomorAgent[position];
 
         holder.txtNamaAgentSC.setText(nama);
         holder.txtProjectAgentSC.setText(project);
+        holder.txtNomorAgentSC.setText(nomor);
 
     }
 
@@ -58,12 +62,13 @@ public class RecyclerViewAdapterDataAgentSC extends RecyclerView.Adapter<Recycle
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtNamaAgentSC,txtProjectAgentSC;
+        TextView txtNamaAgentSC,txtProjectAgentSC,txtNomorAgentSC;
 
         public ViewHolder(View itemView) {
 
             super(itemView);
 
+            txtNomorAgentSC = (TextView)itemView.findViewById(R.id.txtNomorAgentSC);
             txtNamaAgentSC = (TextView)itemView.findViewById(R.id.txtNamaAgentSC);
             txtProjectAgentSC = (TextView)itemView.findViewById(R.id.txtProjectAgentSC);
 

@@ -6,27 +6,40 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.naufalrafizi.dewarumah.AfterLogin.GM.DataGM.Adapter.RecyclerViewAdapterDataGM;
-import com.naufalrafizi.dewarumah.AfterLogin.SA.TokoSA.Adapter.RecyclerViewAdapterTokoSA;
 import com.naufalrafizi.dewarumah.R;
 
-public class DataGMActivity extends AppCompatActivity {
+public class DataGMSC extends AppCompatActivity {
 
     RecyclerViewAdapterDataGM rvAdapterDataGM;
 
-    String [] SA = {
-
-            "Saiful"
-    };
-
-    String [] SCsaiful = {
+    String [] SC = {
 
             "Della"
+
     };
+
+    String SADella []  = {
+            "Ayen",
+            "Ramli"
+    };
+
+    String ProspekAyen [] = {
+            "Rona",
+            "Ilahm",
+            "Diki",
+    };
+
+    String ProspekDella [] = {
+            "Tari",
+            "Ikha",
+            "Robert"
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_gm);
+        setContentView(R.layout.activity_data_gm_sc);
 
 
         setUpRecycler();
@@ -37,7 +50,7 @@ public class DataGMActivity extends AppCompatActivity {
 
         RecyclerView rvListDataGM = (RecyclerView)findViewById(R.id.rvListDataGM);
         rvListDataGM.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        rvAdapterDataGM = new RecyclerViewAdapterDataGM(getApplicationContext(), SA,SCsaiful);
+        rvAdapterDataGM = new RecyclerViewAdapterDataGM(getApplicationContext(),SC,SADella);
         rvListDataGM.setAdapter(rvAdapterDataGM);
 
     }

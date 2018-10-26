@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -70,6 +71,7 @@ public class RecyclerAdapterProgressSC extends RecyclerView.Adapter<RecyclerAdap
                 b.setView(v);
 
                 final RadioGroup rg = (RadioGroup) v.findViewById(R.id.rgProgress);
+                final EditText edtUnit = (EditText)v.findViewById(R.id.edtTypeUnit);
 
                 b.setPositiveButton("Edit", new DialogInterface.OnClickListener() {
                     @Override
@@ -77,11 +79,20 @@ public class RecyclerAdapterProgressSC extends RecyclerView.Adapter<RecyclerAdap
 
                         int selectedId = rg.getCheckedRadioButtonId();
 
-                        final RadioButton radioButton = (RadioButton)v.findViewById(selectedId);
+                        RadioButton radioButton = (RadioButton)v.findViewById(selectedId);
 
-                        holder.txtProgressSC.setText(radioButton.getText());
+                        if (rg.getCheckedRadioButtonId() != -1){
 
-                        Toast.makeText(c,radioButton.getText(), Toast.LENGTH_SHORT).show();
+                            holder.txtProgressSC.setText(radioButton.getText());
+                            Toast.makeText(c,radioButton.getText(), Toast.LENGTH_SHORT).show();
+
+                        } else {
+
+                        }
+
+                        String data = edtUnit.getText().toString();
+
+                        holder.txtNamaUnit.setText(data);
 
                     }
                 });
@@ -101,13 +112,14 @@ public class RecyclerAdapterProgressSC extends RecyclerView.Adapter<RecyclerAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtProgresNamaSC, txtProgressSC, txtProgresProjectSC;
+        TextView txtProgresNamaSC, txtProgressSC, txtProgresProjectSC,txtNamaUnit;
         CardView cvProgressSC;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             cvProgressSC = (CardView)itemView.findViewById(R.id.cvProgressSC);
+            txtNamaUnit = (TextView)itemView.findViewById(R.id.txtNamaUnit);
             txtProgresNamaSC = (TextView)itemView.findViewById(R.id.txtProgresNamaSC);
             txtProgressSC = (TextView)itemView.findViewById(R.id.txtProgressSC);
             txtProgresProjectSC = (TextView)itemView.findViewById(R.id.txtProgresProjectSC);

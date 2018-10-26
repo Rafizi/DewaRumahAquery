@@ -77,10 +77,9 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
                 sa = namaSA;
                 project = edtProjectInputProspek.getText().toString();
 
-                if (nama.isEmpty() || email.isEmpty() || nomor.isEmpty()  || project.isEmpty() || sa.isEmpty()){
+                if (nama.isEmpty() || email.isEmpty() || nomor.isEmpty() || project.isEmpty() || sa.isEmpty()) {
                     Toast.makeText(this, "Masukin yang bener woi", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     createNote(
                             edtNamaInputProspek.getText().toString(),
                             edtEmailInputProspek.getText().toString(),
@@ -89,7 +88,11 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
                             edtProjectInputProspek.getText().toString()
                     );
 
-                            Toast.makeText(this, "Data berhasil di tambahkan", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Data berhasil di tambahkan", Toast.LENGTH_SHORT).show();
+                    edtNamaInputProspek.setText("");
+                    edtEmailInputProspek.setText("");
+                    edtNomorTelponInputProspek.setText("");
+                    edtProjectInputProspek.setText("");
 
                 }
 

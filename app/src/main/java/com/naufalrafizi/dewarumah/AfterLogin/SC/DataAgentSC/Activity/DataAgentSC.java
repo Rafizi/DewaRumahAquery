@@ -28,6 +28,14 @@ public class DataAgentSC extends AppCompatActivity {
 
     };
 
+    String [] nomorAgent = {
+
+            "SASTR02003",
+            "SASPR02003",
+            "SAGDE04003"
+
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +49,7 @@ public class DataAgentSC extends AppCompatActivity {
 
         RecyclerView rvDataAgentSC = (RecyclerView) findViewById(R.id.rvListDataAgentSC);
         rvDataAgentSC.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        rvAdapterSC = new RecyclerViewAdapterDataAgentSC(getApplication(),namaAgent,projectAgent);
+        rvAdapterSC = new RecyclerViewAdapterDataAgentSC(getApplication(),namaAgent,projectAgent,nomorAgent);
         rvDataAgentSC.setAdapter(rvAdapterSC);
 
 

@@ -11,7 +11,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.naufalrafizi.dewarumah.AfterLogin.SA.ProspekSA.Activity.ProspekActivitySA;
+import com.naufalrafizi.dewarumah.AfterLogin.SC.BonusSC.Activity.BonusSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.DataAgentSC.Activity.DataAgentSC;
+import com.naufalrafizi.dewarumah.AfterLogin.SC.DataProspekSC.Activity.DataProspekSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.NotifSC.Activity.NotifSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.ProgressSC.Activity.ProgressSC;
 import com.naufalrafizi.dewarumah.R;
@@ -24,7 +26,7 @@ public class MainActivitySConsultan extends AppCompatActivity {
     ViewPagerAdapterSC vpAdapterSC;
     CircleIndicator indicatorSC;
     RecyclerViewAdapterSC rvAdapterSC;
-    ImageView btnDataAgentSC,btnDataProspek,btnProgress,btnNotifSC;
+    ImageView btnDataAgentSC,btnDataProspek,btnProgress,btnNotifSC,btnBonus;
 
     int [] ImagePromoSC = {
 
@@ -57,6 +59,13 @@ public class MainActivitySConsultan extends AppCompatActivity {
 
     private void setMenu() {
 
+        btnBonus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), BonusSC.class));
+            }
+        });
+
         btnNotifSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +83,7 @@ public class MainActivitySConsultan extends AppCompatActivity {
         btnDataProspek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ProspekActivitySA.class));
+                startActivity(new Intent(getApplicationContext(), DataProspekSC.class));
             }
         });
 
@@ -95,6 +104,7 @@ public class MainActivitySConsultan extends AppCompatActivity {
         btnDataAgentSC = (ImageView)findViewById(R.id.btnDataAgentSC);
         btnDataProspek = (ImageView)findViewById(R.id.btnDataProspek);
         btnProgress = (ImageView)findViewById(R.id.btnTimeline);
+        btnBonus = (ImageView)findViewById(R.id.btnBonus);
 
     }
 
