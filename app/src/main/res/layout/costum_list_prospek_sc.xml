@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvProspekSC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/txtNamaProspekSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="nama"
+                    android:textColor="@color/color_tv" />
+
+                <TextView
+                    android:id="@+id/txtProspekNoTelpSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Telp"
+                    android:textColor="@color/color_tv" />
+
+                <TextView
+                    android:id="@+id/txtProspelEmailSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/color_tv" />
+
+                <TextView
+                    android:id="@+id/txtSASC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SA"
+                    android:textColor="@color/color_tv"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtProjectSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Project"
+                    android:textColor="@color/color_tv" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end|center"
+                tools:ignore="RtlHardcoded">
+
+                <ImageView
+                    android:id="@+id/ivWhatsApp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+
+                    android:src="@mipmap/ic_chat" />
+
+                <ImageView
+                    android:id="@+id/ivCall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/ivWhatsApp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@mipmap/ic_phone" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

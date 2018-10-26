@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.naufalrafizi.dewarumah.AfterLogin.GM.DataGM.Activity.DataGMActivity;
 import com.naufalrafizi.dewarumah.R;
 
 /**

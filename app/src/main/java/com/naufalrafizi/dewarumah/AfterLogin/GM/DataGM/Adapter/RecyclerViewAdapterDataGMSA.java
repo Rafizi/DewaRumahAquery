@@ -9,52 +9,43 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.naufalrafizi.dewarumah.AfterLogin.GM.DataGM.Activity.DataGMSA;
+import com.naufalrafizi.dewarumah.AfterLogin.GM.DataGM.Activity.DataGMProspek;
 import com.naufalrafizi.dewarumah.R;
 
 /**
- * Created by Asus on 9/24/2018.
+ * Created by Asus on 10/24/2018.
  */
 
-public class RecyclerViewAdapterDataGM extends RecyclerView.Adapter<RecyclerViewAdapterDataGM.ViewHolder> {
+public class RecyclerViewAdapterDataGMSA extends RecyclerView.Adapter<RecyclerViewAdapterDataGMSA.ViewHolder> {
 
-    private String [] SC =new String[0];
-    private String [] SA =new String[0];
+    private String [] SA  =new String[0];
     private Context c;
     LayoutInflater inflater;
 
+    public RecyclerViewAdapterDataGMSA(Context c, String[] SA) {
 
-
-    public RecyclerViewAdapterDataGM(Context c, String[] SCsaiful, String[] SADella) {
-
-        this.SA = SADella;
-        this.SC = SCsaiful;
+        this.SA = SA;
         this.c = c.getApplicationContext();
         this.inflater = LayoutInflater.from(c);
 
     }
 
     @Override
-    public RecyclerViewAdapterDataGM.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerViewAdapterDataGMSA.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = inflater.inflate(R.layout.costume_layout_gm,parent,false);
-        RecyclerViewAdapterDataGM.ViewHolder viewHolder = new RecyclerViewAdapterDataGM.ViewHolder(v);
+        RecyclerViewAdapterDataGMSA.ViewHolder viewHolder = new RecyclerViewAdapterDataGMSA.ViewHolder(v);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerViewAdapterDataGM.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerViewAdapterDataGMSA.ViewHolder holder, int position) {
 
-        holder.txtDataSCGM.setText("SC : " + SC[position]);
+        holder.txtDataSCGM.setText("SA : " + SA[position]);
         holder.cvDataGM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(c,DataGMSA.class);
-
-                i.putExtra("SA",SA);
-
+                Intent i = new Intent(c, DataGMProspek.class);
                 c.startActivity(i);
-
             }
         });
 
@@ -62,7 +53,7 @@ public class RecyclerViewAdapterDataGM extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public int getItemCount() {
-        return SC.length;
+        return SA.length;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

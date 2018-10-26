@@ -2,6 +2,7 @@ package com.naufalrafizi.dewarumah.BeforeLogin.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,7 +27,7 @@ import me.relex.circleindicator.CircleIndicator;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btnLogin,btnSignUp;
+    Button btnLogin,btnSignUp,btnTest;
     ViewPagerAdapterMainActivity vpAdapterMainActivity;
     ViewPager vpMainActivity;
     CircleIndicator indicator;
@@ -81,7 +82,6 @@ public class MainActivity extends AppCompatActivity
         });
 
     }
-
 
 
     private void Inisialisasi() {

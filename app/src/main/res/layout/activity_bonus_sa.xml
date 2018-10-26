@@ -21,13 +21,13 @@
                 android:id="@+id/tabBonusSA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabGravity="fill"
                 android:layout_centerInParent="true"
+                app:tabGravity="fill"
                 app:tabMode="fixed">
 
             </android.support.design.widget.TabLayout>
 
-            <include layout="@layout/content_tab_layout"/>
+            <include layout="@layout/content_tab_layout" />
 
         </LinearLayout>
 

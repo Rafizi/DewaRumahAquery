@@ -40,17 +40,21 @@ public class ViewPagerAdapterSC extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
+
         return (view == (LinearLayout)object);
+
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+
         inflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = inflater.inflate(R.layout.row_vpager,container,false);
-        ImageView img = (ImageView)v.findViewById(R.id.imgSlider);
+        ImageView img = (ImageView)v.findViewById (R.id.imgSlider);
         img.setImageResource(imgResource[position]);
         container.addView(v);
         return v;
+
     }
 
     @Override
