@@ -55,10 +55,6 @@ public class MainActivitySAgent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_sa);
 
-
-
-
-
         inisialisasi();
         nama = getIntent().getStringExtra("nama");
         setUpViewPager();
