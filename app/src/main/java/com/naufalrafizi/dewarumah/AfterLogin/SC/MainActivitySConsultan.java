@@ -24,6 +24,7 @@ import com.naufalrafizi.dewarumah.AfterLogin.SC.DataAgentSC.Activity.DataAgentSC
 import com.naufalrafizi.dewarumah.AfterLogin.SC.DataProspekSC.Activity.DataProspekSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.NotifSC.Activity.NotifSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.ProgressSC.Activity.ProgressSC;
+import com.naufalrafizi.dewarumah.BeforeLogin.Activity.Login;
 import com.naufalrafizi.dewarumah.R;
 
 import me.relex.circleindicator.CircleIndicator;
@@ -35,6 +36,8 @@ public class MainActivitySConsultan extends AppCompatActivity {
     CircleIndicator indicatorSC;
     RecyclerViewAdapterSC rvAdapterSC;
     ImageView btnDataAgentSC,btnDataProspek,btnProgress,btnNotifSC,btnBonus;
+    TextView tvNama,tvAlamat,tvTTL,tvNoTelp,tvRek,tvMail,tvPekerjaan;
+    Button logout;
 
     int [] ImagePromoSC = {
 
@@ -65,9 +68,10 @@ public class MainActivitySConsultan extends AppCompatActivity {
         setMenu();
 
         String namaSc = getIntent().getStringExtra("nama");
-        TextView tvSC = (TextView)findViewById(R.id.tvNavSC);
-        tvSC.setText(namaSc);
-        Button logout = (Button)findViewById(R.id.btnLogout);
+
+        tvNama.setText(namaSc);
+
+
 
 
         NavigationView nv = (NavigationView)findViewById(R.id.nav_view_sc);
@@ -151,11 +155,23 @@ public class MainActivitySConsultan extends AppCompatActivity {
 
     private void inisialisasi() {
 
+        tvNama = (TextView)findViewById(R.id.tvNamaNav);
+
         btnNotifSC = (ImageView)findViewById(R.id.notifSC);
         btnDataAgentSC = (ImageView)findViewById(R.id.btnDataAgentSC);
         btnDataProspek = (ImageView)findViewById(R.id.btnDataProspek);
         btnProgress = (ImageView)findViewById(R.id.btnTimeline);
         btnBonus = (ImageView)findViewById(R.id.btnBonus);
+
+        logout = (Button)findViewById(R.id.btnLogout);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
+            }
+        });
 
     }
 
