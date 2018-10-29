@@ -1,6 +1,7 @@
 package com.naufalrafizi.dewarumah.AfterLogin.SC;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,6 +23,7 @@ import com.naufalrafizi.dewarumah.AfterLogin.SA.ProspekSA.Activity.ProspekActivi
 import com.naufalrafizi.dewarumah.AfterLogin.SC.BonusSC.Activity.BonusSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.DataAgentSC.Activity.DataAgentSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.DataProspekSC.Activity.DataProspekSC;
+import com.naufalrafizi.dewarumah.AfterLogin.SC.EditProfil.EditProfil;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.NotifSC.Activity.NotifSC;
 import com.naufalrafizi.dewarumah.AfterLogin.SC.ProgressSC.Activity.ProgressSC;
 import com.naufalrafizi.dewarumah.BeforeLogin.Activity.Login;
@@ -35,7 +37,7 @@ public class MainActivitySConsultan extends AppCompatActivity {
     ViewPagerAdapterSC vpAdapterSC;
     CircleIndicator indicatorSC;
     RecyclerViewAdapterSC rvAdapterSC;
-    ImageView btnDataAgentSC,btnDataProspek,btnProgress,btnNotifSC,btnBonus;
+    ImageView btnDataAgentSC,btnDataProspek,btnProgress,btnNotifSC,btnBonus,btnEditProfil;
     TextView tvNama,tvAlamat,tvTTL,tvNoTelp,tvRek,tvMail,tvPekerjaan;
     Button logout;
 
@@ -156,12 +158,47 @@ public class MainActivitySConsultan extends AppCompatActivity {
     private void inisialisasi() {
 
         tvNama = (TextView)findViewById(R.id.tvNamaNav);
+        tvAlamat = (TextView)findViewById(R.id.tvAlamatNav);
+        tvMail = (TextView)findViewById(R.id.tvGmailNav);
+        tvRek = (TextView)findViewById(R.id.tvRekNav);
+        tvTTL = (TextView)findViewById(R.id.tvTtlNav);
+        tvNoTelp = (TextView)findViewById(R.id.tvTelpNav);
+        tvPekerjaan = (TextView)findViewById(R.id.tvPekerjaanNav);
+
 
         btnNotifSC = (ImageView)findViewById(R.id.notifSC);
         btnDataAgentSC = (ImageView)findViewById(R.id.btnDataAgentSC);
         btnDataProspek = (ImageView)findViewById(R.id.btnDataProspek);
         btnProgress = (ImageView)findViewById(R.id.btnTimeline);
         btnBonus = (ImageView)findViewById(R.id.btnBonus);
+        btnEditProfil = (ImageView) findViewById(R.id.btnEditProfil);
+
+        btnEditProfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String nama,alamat,email,rek,ttl,nomor,pekerjaan;
+
+                nama = tvNama.getText().toString();
+                alamat = tvAlamat.getText().toString();
+                email = tvMail.getText().toString();
+                rek = tvRek.getText().toString();
+                ttl = tvTTL.getText().toString();
+                pekerjaan = tvPekerjaan.getText().toString();
+                nomor = tvNoTelp.getText().toString();
+
+                Intent i = new Intent(getApplicationContext(), EditProfil.class);
+                i.putExtra("nama",nama);
+                i.putExtra("alamat",alamat);
+                i.putExtra("email",email);
+                i.putExtra("rek",rek);
+                i.putExtra("ttl",ttl);
+                i.putExtra("pekerjaan",pekerjaan);
+                i.putExtra("nomor",nomor);
+                startActivity(i);
+
+            }
+        });
 
         logout = (Button)findViewById(R.id.btnLogout);
 

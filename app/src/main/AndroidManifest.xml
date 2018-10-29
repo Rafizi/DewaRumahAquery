@@ -61,12 +61,15 @@
         <activity android:name=".AfterLogin.SA.DetailPromoSA" />
         <activity android:name=".AfterLogin.GM.DetailPromoGM" />
         <activity android:name=".AfterLogin.SC.DetailPromoSC" />
-        <activity android:name=".AfterLogin.GM.NotifGM.Activity.NotifGM"
-            android:parentActivityName=".AfterLogin.GM.MainActivityGM"/>
-        <activity android:name=".AfterLogin.SA.NotifSA.Activity.NotifSA"
-            android:parentActivityName=".AfterLogin.SA.MainActivitySAgent"/>
-        <activity android:name=".AfterLogin.SC.NotifSC.Activity.NotifSC"
-            android:parentActivityName=".AfterLogin.SC.MainActivitySConsultan"/>
+        <activity
+            android:name=".AfterLogin.GM.NotifGM.Activity.NotifGM"
+            android:parentActivityName=".AfterLogin.GM.MainActivityGM" />
+        <activity
+            android:name=".AfterLogin.SA.NotifSA.Activity.NotifSA"
+            android:parentActivityName=".AfterLogin.SA.MainActivitySAgent" />
+        <activity
+            android:name=".AfterLogin.SC.NotifSC.Activity.NotifSC"
+            android:parentActivityName=".AfterLogin.SC.MainActivitySConsultan" />
         <activity android:name=".AfterLogin.GM.NotifGM.Activity.DetailNotifGM" />
         <activity android:name=".AfterLogin.SA.NotifSA.Activity.DetailNotifSA" />
         <activity android:name=".AfterLogin.SC.NotifSC.Activity.DetailNotifSC" />
@@ -76,7 +79,8 @@
         <activity
             android:name=".AfterLogin.SC.DataProspekSC.Activity.DataProspekSC"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AfterLogin.SC.BonusSC.Activity.BonusSC"></activity>
+        <activity android:name=".AfterLogin.SC.BonusSC.Activity.BonusSC" />
+        <activity android:name=".AfterLogin.SC.EditProfil.EditProfil"></activity>
     </application>
 
 </manifest>
