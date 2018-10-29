@@ -13,8 +13,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import com.naufalrafizi.dewarumah.AfterLogin.SA.BonusSA.Activity.BonusActivitySA;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.NotifSA.Activity.NotifSA;
@@ -22,7 +24,10 @@ import com.naufalrafizi.dewarumah.AfterLogin.SA.ProfilSA.ProfilActivitySA;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.TokoSA.Activity.TokoActivitySA;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.InputProspekSA.Activity.InputProspekSA;
 import com.naufalrafizi.dewarumah.AfterLogin.SA.ProspekSA.Activity.ProspekActivitySA;
+import com.naufalrafizi.dewarumah.BeforeLogin.Activity.Login;
 import com.naufalrafizi.dewarumah.R;
+
+import org.w3c.dom.Text;
 
 import me.relex.circleindicator.CircleIndicator;
 
@@ -33,7 +38,9 @@ public class MainActivitySAgent extends AppCompatActivity {
     CircleIndicator indicator;
     RecylerViewAdapterSA rvAdapterSA;
     ImageView btnToko,btnProfil,btnProspek,btnInput,btnBonus,btnNotifSA;
-    String nama;
+    Button btnLogout;
+    String nama,nomor,email;
+    TextView tvNama,tvEmail,tvNomor;
 
     int [] ImagePromoSA = {
 
@@ -57,6 +64,12 @@ public class MainActivitySAgent extends AppCompatActivity {
 
         inisialisasi();
         nama = getIntent().getStringExtra("nama");
+        nomor = getIntent().getStringExtra("nomor");
+        email = getIntent().getStringExtra("email");
+
+        tvNama.setText(nama);
+        tvNomor.setText(nomor);
+        tvEmail.setText(email);
         setUpViewPager();
         setUpRecylerView();
         setUpMenu();
@@ -110,10 +123,24 @@ public class MainActivitySAgent extends AppCompatActivity {
         btnProfil = (ImageView) findViewById(R.id.btnProfil);
         btnInput = (ImageView) findViewById(R.id.btnInputProspek);
         btnProspek = (ImageView) findViewById(R.id.btnProspek);
+        btnLogout = (Button)findViewById(R.id.btnLogout);
+
+        //TextView
+        tvNama = (TextView)findViewById(R.id.tvNamaNav);
+        tvEmail = (TextView)findViewById(R.id.tvGmailNav);
+        tvNomor = (TextView)findViewById(R.id.tvTelpNav);
 
     }
 
     private void setUpMenu() {
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
+            }
+        });
 
         btnNotifSA.setOnClickListener(new View.OnClickListener() {
             @Override
