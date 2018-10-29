@@ -45,6 +45,7 @@
                     android:textSize="@dimen/activity_vertical_margin" />
 
                 <ImageView
+                    android:id="@+id/btnEditProfil"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
@@ -100,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Smurfin"
+                android:text="Depok"
 
                 android:textColor="@color/color_tv"
                 android:textSize="@dimen/activity_vertical_margin" />
@@ -125,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Smurfin"
+                android:text="6281284638768"
 
                 android:textColor="@color/color_tv"
                 android:textSize="@dimen/activity_vertical_margin" />
@@ -150,7 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Smurfin"
+                android:text="Smur.fin@gmail.com"
                 android:textColor="@color/color_tv"
                 android:textSize="@dimen/activity_vertical_margin" />
         </LinearLayout>
@@ -174,7 +175,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Smurfin"
+                android:text="0347873"
                 android:textColor="@color/color_tv"
                 android:textSize="@dimen/activity_vertical_margin" />
         </LinearLayout>
@@ -198,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Smurfin"
+                android:text="Sales"
                 android:textColor="@color/color_tv"
                 android:textSize="@dimen/activity_vertical_margin" />
         </LinearLayout>
