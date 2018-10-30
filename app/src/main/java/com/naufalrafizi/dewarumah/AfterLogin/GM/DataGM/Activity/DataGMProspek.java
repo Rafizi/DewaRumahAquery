@@ -29,6 +29,25 @@ public class DataGMProspek extends AppCompatActivity {
             "Follow Up"
 
     };
+    String[]notelp = {
+            "6281245889012",
+            "6289957643398",
+            "6280999678290",
+            "6285588720098"
+
+    };
+    String[]email = {
+            "tayo@gmail.com",
+            "irithel@gmail.com",
+            "zill@gmail.com",
+            "areka@gmail.com"
+    };
+    String[]project = {
+            "Greenland Bogor",
+            "Amaya",
+            "Alana",
+            "Ayana",
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +62,7 @@ public class DataGMProspek extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvDataGmProspek);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        rvAdapterDataGMProspek = new RecyclerViewAdapterDataGMProspek(getApplicationContext(), prospek,progres);
+        rvAdapterDataGMProspek = new RecyclerViewAdapterDataGMProspek(getApplicationContext(), prospek,progres,email,project,notelp);
         recyclerView.setAdapter(rvAdapterDataGMProspek);
 
     }

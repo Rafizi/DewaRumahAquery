@@ -5,7 +5,9 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.naufalrafizi.dewarumah.AfterLogin.SA.InputProspekSA.Helper.DBDataSource;
@@ -27,6 +29,7 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
     RecyclerViewAdapterProspekSA adapter;
     String namaSA;
     MInputProspek p;
+    Spinner spProjectProject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,21 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
 
         btnSubmitInputProspek.setOnClickListener(this);
         btnRead.setOnClickListener(this);
+        String[] items = new String[]{
+                "Greenville Cileungsi",
+                "Greenville Darul Istiqomah",
+                "Greenland Healthful Living",
+                "Greenland Foresthill",
+                "Greenland River Villa",
+                "The Spring Townhouse",
+                "Alana Boutique Townhouse",
+                "Amaya Boutique Townhouse",
+                "Ayana Boutique Townhouse",
+                "Riviera Boutique Townhouse"
+        };
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,items);
+        spProjectProject.setAdapter(adapter);
+
         p = new MInputProspek();
 
 
@@ -52,9 +70,10 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
     private void Inisialisasi() {
         btnSubmitInputProspek = (Button) findViewById(R.id.btnSubmitInputProspek);
         btnRead = (Button) findViewById(R.id.btnRead);
+        spProjectProject = (Spinner)findViewById(R.id.spProjectProspek);
 
         edtNamaInputProspek = (TextInputEditText) findViewById(R.id.edtNamaInputProspek);
-        edtProjectInputProspek = (TextInputEditText) findViewById(R.id.edtProjectInputProspek);
+//        edtProjectInputProspek = (TextInputEditText) findViewById(R.id.edtProjectInputProspek);
         edtEmailInputProspek = (TextInputEditText) findViewById(R.id.edtEmailInputProspek);
         edtSAInputProspek = (TextInputEditText) findViewById(R.id.edtSAInputProspek);
         edtNomorTelponInputProspek = (TextInputEditText) findViewById(R.id.edtNomorTelponInputProspek);
@@ -75,7 +94,7 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
                 email = edtEmailInputProspek.getText().toString();
                 nomor = edtNomorTelponInputProspek.getText().toString();
                 sa = namaSA;
-                project = edtProjectInputProspek.getText().toString();
+                project = spProjectProject.getSelectedItem().toString();
 
                 if (nama.isEmpty() || email.isEmpty() || nomor.isEmpty() || project.isEmpty() || sa.isEmpty()) {
                     Toast.makeText(this, "Masukin yang bener woi", Toast.LENGTH_SHORT).show();
@@ -85,14 +104,14 @@ public class InputProspekSA extends AppCompatActivity implements View.OnClickLis
                             edtEmailInputProspek.getText().toString(),
                             edtNomorTelponInputProspek.getText().toString(),
                             sa = namaSA,
-                            edtProjectInputProspek.getText().toString()
+                            spProjectProject.getSelectedItem().toString()
                     );
 
                     Toast.makeText(this, "Data berhasil di tambahkan", Toast.LENGTH_SHORT).show();
                     edtNamaInputProspek.setText("");
                     edtEmailInputProspek.setText("");
                     edtNomorTelponInputProspek.setText("");
-                    edtProjectInputProspek.setText("");
+
 
                 }
 

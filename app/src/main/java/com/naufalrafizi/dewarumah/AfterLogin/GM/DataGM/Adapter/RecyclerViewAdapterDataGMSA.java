@@ -45,6 +45,7 @@ public class RecyclerViewAdapterDataGMSA extends RecyclerView.Adapter<RecyclerVi
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(c, DataGMProspek.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 c.startActivity(i);
             }
         });

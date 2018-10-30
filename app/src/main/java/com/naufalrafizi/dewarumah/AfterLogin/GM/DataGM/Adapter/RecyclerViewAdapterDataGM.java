@@ -52,6 +52,7 @@ public class RecyclerViewAdapterDataGM extends RecyclerView.Adapter<RecyclerView
                 Intent i = new Intent(c,DataGMSA.class);
 
                 i.putExtra("SA",SA);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 c.startActivity(i);
 
